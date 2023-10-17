@@ -6,8 +6,8 @@ import com.fawry.store.exceptions.NoSuchEntityException;
 import com.fawry.store.repos.InventoryRepo;
 import com.fawry.store.services.InventoryService;
 import com.fawry.store.services.mapper.InventoryMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +16,20 @@ import java.util.List;
 
 @Service
 @Primary
-@RequiredArgsConstructor
 public class InventoryServiceImp implements InventoryService {
 
-    final String INVENTORY_NOT_FOUND = "INVENTORY_NOT_FOUND";
-    private final InventoryRepo repo;
-    private final InventoryMapper mapper;
+    InventoryRepo repo;
+    InventoryMapper mapper;
 
+
+    @Autowired
+    public InventoryServiceImp(InventoryRepo repo , InventoryMapper mapper){
+        this.repo = repo;
+        this.mapper = mapper;
+    }
+
+
+    final String INVENTORY_NOT_FOUND = "INVENTORY_NOT_FOUND";
     @Override
     public List<InventoryDto> getAllInventories() {
         return repo.findAll()
@@ -35,7 +42,7 @@ public class InventoryServiceImp implements InventoryService {
     @Override
     public InventoryDto getInventoryById(long id) {
         return mapper.toInventoryDto(repo.findById(id)
-                .orElseThrow(() -> new NoSuchEntityException(INVENTORY_NOT_FOUND)));
+                .orElseThrow(()-> new NoSuchEntityException(INVENTORY_NOT_FOUND)));
     }
 
     @Override
@@ -46,7 +53,7 @@ public class InventoryServiceImp implements InventoryService {
 
     @Override
     public InventoryDto updateInventory(long id, InventoryDto inventoryDto) {
-        Inventory inventory = repo.findById(id).orElseThrow(() -> new NoSuchEntityException(INVENTORY_NOT_FOUND));
+        Inventory inventory = repo.findById(id).orElseThrow(()-> new NoSuchEntityException(INVENTORY_NOT_FOUND));
 
         inventory.setProductQuantity(inventoryDto.getProductQuantity());
 
@@ -58,6 +65,7 @@ public class InventoryServiceImp implements InventoryService {
         Inventory inventory = repo.findById(id).orElseThrow(() -> new NoSuchEntityException(INVENTORY_NOT_FOUND));
         repo.delete(inventory);
     }
+
 
 
 }

@@ -1,18 +1,19 @@
 package com.example.orderapi.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.math.BigDecimal;
 
 @Service
+@RequiredArgsConstructor
 public class BankService {
-    String url = "http://localhost:8083/home";
-    @Autowired
-    private WebClient webClient;
 
-    public boolean consumeTransfer(long customerCard, long merchantCard, BigDecimal amount) {
+    private final WebClient webClient;
+
+    public boolean consumeTransfer(Long customerCard, Long merchantCard, BigDecimal amount) {
+        String url = "http://localhost:8080/home";
         return webClient.put()
                 .uri(url + "/transfer", uriBuilder -> uriBuilder
                         .queryParam("customerCard", customerCard)

@@ -72,11 +72,11 @@ public class BankController {
         return ResponseEntity.ok(updatedAccount);
     }
 
-    @PutMapping("/{cardNumber1}/{cardNumber2}/transfer")
-    public ResponseEntity<AccountResponse> withdraw(@PathVariable Long cardNumber1,
-                                                    @PathVariable Long cardNumber2,
-                                                    @RequestParam BigDecimal amount) {
-        AccountResponse account = bankService.transfer(cardNumber1, cardNumber2, amount);
-        return ResponseEntity.ok(account);
+    @PutMapping("/transfer")
+    public Boolean withdraw(@RequestParam Long customerCard,
+                            @RequestParam Long merchantCard,
+                            @RequestParam BigDecimal amount) {
+
+        return bankService.transfer(customerCard, merchantCard, amount);
     }
 }

@@ -24,7 +24,7 @@ public interface BankService {
 
     AccountResponse withdraw(Long cardNumber, BigDecimal amount);
 
-    AccountResponse transfer(Long cardNumber1, Long cardNumber2, BigDecimal amount);
+    Boolean transfer(Long cardNumber1, Long cardNumber2, BigDecimal amount);
 
     // Transaction get methods
     List<TransactionResponse> getTransactions(Long cardNumber);

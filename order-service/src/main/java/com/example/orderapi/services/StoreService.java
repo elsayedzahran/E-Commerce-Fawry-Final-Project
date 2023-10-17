@@ -1,23 +1,25 @@
 package com.example.orderapi.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class StoreService {
-    private final String url = "";
-    @Autowired
-    private WebClient webClient;
+
+    private final WebClient webClient;
 
     public boolean validateProductsInStore(List<Integer> productsList) {
-        return webClient.get()
-                .uri(url,
-                        uriBuilder -> uriBuilder.queryParam("productsId", productsList).build())
+        String url = "";
+        return Boolean.TRUE.equals(
+                webClient.get()
+                .uri(url, uriBuilder ->
+                        uriBuilder.queryParam("productsId", productsList).build())
                 .retrieve()
                 .bodyToMono(Boolean.class)
-                .block();
+                .block());
     }
 }

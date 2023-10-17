@@ -18,10 +18,10 @@ public class Inventory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @Column(name = "product_quantity", columnDefinition = "int default 0")
+    @Column(name = "product_quantity" , columnDefinition = "int default 0")
     long productQuantity;
 
-    @Column(name = "created_at", updatable = false)
+    @Column(name = "created_at" , updatable = false)
     @Temporal(value = TemporalType.DATE)
     Date date;
 
@@ -34,22 +34,21 @@ public class Inventory {
     @JoinColumn(name = "product_id")
     Product product;
 
-    @OneToMany(mappedBy = "inventory", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "inventory" , fetch = FetchType.LAZY , cascade = CascadeType.ALL)
     List<StockHistory> histories = new ArrayList<>();
 
-    public Inventory() {
-    }
+    public Inventory(){}
 
     public Inventory(Date date, long productQuantity) {
         this.date = date;
         this.productQuantity = productQuantity;
     }
 
-    public Inventory(long productQuantity) {
+    public  Inventory(long productQuantity){
         this.productQuantity = productQuantity;
     }
 
-    public boolean addHistory(StockHistory history) {
+    public boolean addHistory(StockHistory history){
         return histories.add(history);
     }
 }

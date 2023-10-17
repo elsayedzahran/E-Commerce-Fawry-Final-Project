@@ -6,8 +6,8 @@ import com.fawry.store.exceptions.NoSuchEntityException;
 import com.fawry.store.repos.StockHistoryRepo;
 import com.fawry.store.services.StockHistoryService;
 import com.fawry.store.services.mapper.StockHistoryMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +16,15 @@ import java.util.NoSuchElementException;
 
 @Service
 @Primary
-@RequiredArgsConstructor
 public class StockHistoryServiceImp implements StockHistoryService {
 
+    @Autowired
+    StockHistoryRepo repo;
+
+    @Autowired
+    StockHistoryMapper mapper;
+
     final String STOCK_HISTORY_NOT_FOUND = "STOCK_HISTORY_NOT_FOUND";
-    private final StockHistoryRepo repo;
-    private final StockHistoryMapper mapper;
 
     @Override
     public List<StockHistoryDto> getAllHistories() {
@@ -52,13 +55,14 @@ public class StockHistoryServiceImp implements StockHistoryService {
     @Override
     public StockHistoryDto getHistory(long id) {
         return mapper.toStockHistoryDto(repo.findById(id)
-                .orElseThrow(() -> new NoSuchEntityException(STOCK_HISTORY_NOT_FOUND)));
+                .orElseThrow(()-> new NoSuchEntityException(STOCK_HISTORY_NOT_FOUND)));
     }
+
 
 
     @Override
     public void removeHistory(long id) {
-        StockHistory history = repo.findById(id).orElseThrow(() -> new NoSuchElementException(STOCK_HISTORY_NOT_FOUND));
+        StockHistory history = repo.findById(id).orElseThrow(()-> new NoSuchElementException(STOCK_HISTORY_NOT_FOUND));
         repo.delete(history);
     }
 }

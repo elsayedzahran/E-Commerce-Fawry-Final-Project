@@ -7,6 +7,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackageClasses = {InventoryMapper.class, StockHistoryMapper.class, WarehouseMapper.class})
+@ComponentScan(basePackageClasses = {InventoryMapper.class  , StockHistoryMapper.class , WarehouseMapper.class})
 public class Config {
 }

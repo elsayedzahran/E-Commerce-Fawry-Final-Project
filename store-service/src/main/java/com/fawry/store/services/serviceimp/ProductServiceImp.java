@@ -10,8 +10,8 @@ import com.fawry.store.externalapi.FetchProductData;
 import com.fawry.store.repos.ProductRepo;
 import com.fawry.store.services.ProductService;
 import com.fawry.store.services.mapper.ProductMapper;
-import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +19,19 @@ import java.util.List;
 
 @Service
 @Primary
-@RequiredArgsConstructor
 public class ProductServiceImp implements ProductService {
 
+    @Autowired
+    ProductRepo repo;
+
+    @Autowired
+    ProductMapper mapper;
+
+    @Autowired
+    FetchProductData productData;
+
     final String PRODUCT_NOT_FOUND = "PRODUCT_NOT_FOUND";
-    private final ProductRepo repo;
-    private final ProductMapper mapper;
-    private final FetchProductData productData;
+
 
     @Override
     public List<ProductDto> getAllStockedProducts() {
@@ -39,7 +45,7 @@ public class ProductServiceImp implements ProductService {
     @Override
     public ProductDto getProduct(Long id) {
         return mapper.toProductDto(repo.findById(id)
-                .orElseThrow(() -> new NoSuchEntityException(PRODUCT_NOT_FOUND)));
+                .orElseThrow(()-> new NoSuchEntityException(PRODUCT_NOT_FOUND)));
     }
 
     @Override
@@ -59,7 +65,7 @@ public class ProductServiceImp implements ProductService {
 
     @Override
     public void removeProduct(long id) {
-        Product product = repo.findById(id).orElseThrow(() -> new NoSuchEntityException(PRODUCT_NOT_FOUND));
+        Product product = repo.findById(id).orElseThrow(()-> new NoSuchEntityException(PRODUCT_NOT_FOUND));
         repo.delete(product);
     }
 
@@ -72,7 +78,6 @@ public class ProductServiceImp implements ProductService {
     @Override
     public List<ProductDtoData> getSearchedProducts(String text) {
         ObjectMapper mapper1 = new ObjectMapper();
-        return mapper1.convertValue(productData.fetchSearchedProducts(text).block(), new TypeReference<List<ProductDtoData>>() {
-        });
+        return mapper1.convertValue(productData.fetchSearchedProducts(text).block(), new TypeReference<List<ProductDtoData>>() { });
     }
 }

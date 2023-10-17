@@ -28,16 +28,16 @@ public class Warehouse {
     String address;
 
 
-    @Column(name = "created_at", updatable = false)
+
+    @Column(name = "created_at" , updatable = false )
     @Temporal(value = TemporalType.DATE)
-    Date date;
+    Date date ;
 
 
-    @OneToMany(mappedBy = "warehouse", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "warehouse" , cascade = CascadeType.ALL)
     List<Inventory> inventories = new ArrayList<>();
 
-    public Warehouse() {
-    }
+    public Warehouse(){}
 
     public Warehouse(String name) {
         this.name = name;
@@ -49,7 +49,7 @@ public class Warehouse {
         this.location = location;
     }
 
-    public boolean createWarehouseInventory(Inventory inventory) {
+    public boolean createWarehouseInventory(Inventory inventory){
         return inventories.add(inventory);
     }
 }

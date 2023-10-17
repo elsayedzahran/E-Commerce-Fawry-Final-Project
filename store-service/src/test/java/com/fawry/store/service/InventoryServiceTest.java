@@ -27,36 +27,37 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class InventoryServiceTest {
 
-    final String INVENTORY_NOT_FOUND = "INVENTORY_NOT_FOUND";
     @Mock
     InventoryRepo repo;
+
     @Mock
     InventoryMapper mapper;
+
     @InjectMocks
-    InventoryService service = new InventoryServiceImp(repo, mapper);
+    InventoryService service = new InventoryServiceImp(repo , mapper);
+
+    final String INVENTORY_NOT_FOUND = "INVENTORY_NOT_FOUND";
 
     @Test
-    void testAllInventories() {
+    void testAllInventories(){
         // arrange
-        InventoryDto inventoryDto = new InventoryDto();
-        inventoryDto.setProductQuantity(5);
+        InventoryDto inventoryDto = new InventoryDto();inventoryDto.setProductQuantity(5);
         Inventory inventory = new Inventory(5);
 
         when(repo.findAll()).thenReturn(List.of(inventory));
         when(mapper.toInventoryDto(inventory)).thenReturn(inventoryDto);
         // act
-        List<InventoryDto> inventories = service.getAllInventories();
+        List<InventoryDto> inventories =  service.getAllInventories();
         // assert
         Assertions.assertThat(inventories).isNotNull().hasSize(1);
     }
 
     @Test
-    void testGetInventoryById() {
+    void testGetInventoryById(){
         // arrange
-        InventoryDto inventoryDto = new InventoryDto();
-        inventoryDto.setProductQuantity(5);
+        InventoryDto inventoryDto = new InventoryDto();inventoryDto.setProductQuantity(5);
         Inventory inventory = new Inventory(5);
-        when(repo.findById((long) 1)).thenReturn(Optional.of(inventory));
+        when(repo.findById((long)1)).thenReturn(Optional.of(inventory));
         when(mapper.toInventoryDto(inventory)).thenReturn(inventoryDto);
         // act
         InventoryDto dto = service.getInventoryById(1);
@@ -65,9 +66,9 @@ public class InventoryServiceTest {
     }
 
     @Test
-    void testGetInventoryByIdAndNotFound() {
+    void testGetInventoryByIdAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.getInventoryById(1))
@@ -77,9 +78,8 @@ public class InventoryServiceTest {
 
 
     @Test
-    void testCreateNewInventory() {
-        InventoryDto inventoryDto = new InventoryDto();
-        inventoryDto.setProductQuantity(5);
+    void testCreateNewInventory(){
+        InventoryDto inventoryDto = new InventoryDto();inventoryDto.setProductQuantity(5);
         Inventory inventory = new Inventory(5);
 
         when(repo.save(inventory)).thenReturn(inventory);
@@ -92,36 +92,35 @@ public class InventoryServiceTest {
     }
 
     @Test
-    void testUpdateInventoryAndInventoryNotFound() {
+    void testUpdateInventoryAndInventoryNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
-        assertThatThrownBy(() -> service.updateInventory(1, any(InventoryDto.class)))
+        assertThatThrownBy(() -> service.updateInventory(1 , any(InventoryDto.class)))
                 .isInstanceOf(NoSuchEntityException.class)
                 .hasMessage(INVENTORY_NOT_FOUND);
     }
 
     @Test
-    void testUpdateInventory() {
+    void testUpdateInventory(){
         // arrange
-        InventoryDto inventoryDto = new InventoryDto();
-        inventoryDto.setProductQuantity(5);
+        InventoryDto inventoryDto = new InventoryDto();inventoryDto.setProductQuantity(5);
         Inventory inventory = new Inventory(5);
-        when(repo.findById((long) 1)).thenReturn(Optional.ofNullable(inventory));
+        when(repo.findById((long)1)).thenReturn(Optional.ofNullable(inventory));
         when(mapper.toInventoryDto(inventory)).thenReturn(inventoryDto);
         when(repo.save(inventory)).thenReturn(inventory);
 
         // act
-        InventoryDto dto = service.updateInventory(1, inventoryDto);
+        InventoryDto dto = service.updateInventory(1 , inventoryDto);
         // assert
         assertThat(dto).isNotNull().isEqualTo(inventoryDto);
     }
 
     @Test
-    void testDeleteInventoryAndNotFound() {
+    void testDeleteInventoryAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.destroyInventory(1))
@@ -130,10 +129,10 @@ public class InventoryServiceTest {
     }
 
     @Test
-    void testDeleteInventory() {
+    void testDeleteInventory(){
         // arrange
         Inventory inventory = new Inventory(5);
-        when(repo.findById((long) 1)).thenReturn(Optional.of(inventory));
+        when(repo.findById((long)1)).thenReturn(Optional.of(inventory));
         // act
         org.junit.jupiter.api.Assertions.assertAll(() -> service.destroyInventory(1));
     }

@@ -1131,8 +1131,8 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="297" parent="1" name="store">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-10-17.19:11:22</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-17.14:11:22</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-10-17.19:56:57</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-17.14:56:57</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="298" parent="1" name="sys">

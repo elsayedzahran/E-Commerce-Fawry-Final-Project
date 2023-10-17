@@ -12,6 +12,8 @@ public interface CouponService {
 
     CouponDTO findCouponById(Long id);
 
+    CouponDTO findCouponByCode(String id);
+
     void addCoupon(@Valid CouponDTO couponDTO);
 
     void deleteCoupon(Long id);

@@ -28,40 +28,44 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 public class WarehouseServiceTest {
 
-    final String WAREHOUSE_NOT_FOUND = "WAREHOUSE_NOT_FOUND";
     @Mock
     WarehouseRepo repo;
+
     @Mock
     WarehouseMapper mapper;
+
     @InjectMocks
     WarehouseService service = new WarehouseServiceImp();
 
+   final String WAREHOUSE_NOT_FOUND = "WAREHOUSE_NOT_FOUND";
+
+
     @Test
-    void testAllWarehouses() {
+    void testAllWarehouses(){
         // arrange
         WarehouseDto warehouseDto = new WarehouseDto();
         warehouseDto.setId(1);
         warehouseDto.setName("name");
         warehouseDto.setLocation("location");
-        Warehouse warehouse = new Warehouse(1, "name", "location");
+        Warehouse warehouse = new Warehouse(1 , "name" , "location");
 
         when(repo.findAll()).thenReturn(List.of(warehouse));
         when(mapper.toWarehouseDto(warehouse)).thenReturn(warehouseDto);
         // act
-        List<WarehouseDto> Warehouses = service.getAllWarehouses();
+        List<WarehouseDto> Warehouses =  service.getAllWarehouses();
         // assert
         Assertions.assertThat(Warehouses).isNotNull().hasSize(1);
     }
 
     @Test
-    void testGetWarehouseById() {
+    void testGetWarehouseById(){
         // arrange
         WarehouseDto warehouseDto = new WarehouseDto();
         warehouseDto.setId(1);
         warehouseDto.setName("name");
         warehouseDto.setLocation("location");
-        Warehouse warehouse = new Warehouse(1, "name", "location");
-        when(repo.findById((long) 1)).thenReturn(Optional.of(warehouse));
+        Warehouse warehouse = new Warehouse(1 , "name" , "location");
+        when(repo.findById((long)1)).thenReturn(Optional.of(warehouse));
         when(mapper.toWarehouseDto(warehouse)).thenReturn(warehouseDto);
         // act
         WarehouseDto dto = service.getWarehouse(1);
@@ -70,9 +74,9 @@ public class WarehouseServiceTest {
     }
 
     @Test
-    void testGetWarehouseByIdAndNotFound() {
+    void testGetWarehouseByIdAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.getWarehouse(1))
@@ -82,12 +86,12 @@ public class WarehouseServiceTest {
 
 
     @Test
-    void testCreateNewWarehouse() {
+    void testCreateNewWarehouse(){
         WarehouseDto warehouseDto = new WarehouseDto();
         warehouseDto.setId(1);
         warehouseDto.setName("name");
         warehouseDto.setLocation("location");
-        Warehouse warehouse = new Warehouse(1, "name", "location");
+        Warehouse warehouse = new Warehouse(1 , "name" , "location");
 
         when(repo.save(warehouse)).thenReturn(warehouse);
         when(mapper.toWarehouseDto(warehouse)).thenReturn(warehouseDto);
@@ -99,38 +103,38 @@ public class WarehouseServiceTest {
     }
 
     @Test
-    void testUpdateWarehouseAndWarehouseNotFound() {
+    void testUpdateWarehouseAndWarehouseNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
-        assertThatThrownBy(() -> service.updateWarehouse(1, any(WarehouseDto.class)))
+        assertThatThrownBy(() -> service.updateWarehouse(1 , any(WarehouseDto.class)))
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessage(WAREHOUSE_NOT_FOUND);
     }
 
     @Test
-    void testUpdateWarehouse() {
+    void testUpdateWarehouse(){
         // arrange
         WarehouseDto warehouseDto = new WarehouseDto();
         warehouseDto.setId(1);
         warehouseDto.setName("name");
         warehouseDto.setLocation("location");
-        Warehouse warehouse = new Warehouse(1, "name", "location");
-        when(repo.findById((long) 1)).thenReturn(Optional.ofNullable(warehouse));
+        Warehouse warehouse = new Warehouse(1 , "name" , "location");
+        when(repo.findById((long)1)).thenReturn(Optional.ofNullable(warehouse));
         when(mapper.toWarehouseDto(warehouse)).thenReturn(warehouseDto);
         when(repo.save(warehouse)).thenReturn(warehouse);
 
         // act
-        WarehouseDto dto = service.updateWarehouse(1, warehouseDto);
+        WarehouseDto dto = service.updateWarehouse(1 , warehouseDto);
         // assert
         assertThat(dto).isNotNull().isEqualTo(warehouseDto);
     }
 
     @Test
-    void testDeleteWarehouseAndNotFound() {
+    void testDeleteWarehouseAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.removeWarehouse(1))
@@ -139,10 +143,10 @@ public class WarehouseServiceTest {
     }
 
     @Test
-    void testDeleteWarehouse() {
+    void testDeleteWarehouse(){
         // arrange
-        Warehouse warehouse = new Warehouse(1, "name", "location");
-        when(repo.findById((long) 1)).thenReturn(Optional.of(warehouse));
+        Warehouse warehouse = new Warehouse(1 , "name" , "location");
+        when(repo.findById((long)1)).thenReturn(Optional.of(warehouse));
         // act
         org.junit.jupiter.api.Assertions.assertAll(() -> service.removeWarehouse(1));
     }

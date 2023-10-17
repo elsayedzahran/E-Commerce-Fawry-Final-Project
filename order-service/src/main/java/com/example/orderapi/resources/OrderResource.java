@@ -30,13 +30,18 @@ public class OrderResource {
         return "success";
     }
 
-    @GetMapping("get/{code}")
-    public CouponResponseDto testCouponRequest(@PathVariable String code) {
-        return couponService.validateCoupon(code);
-    }
+//    @GetMapping("get/{code}")
+//    public CouponResponseDto testCouponRequest(@PathVariable String code) {
+//        return couponService.validateCoupon(code);
+//    }
 
     @GetMapping
     public boolean testCouponRequest(@RequestParam long customerCard, @RequestParam long merchantCard, @RequestParam BigDecimal amount) {
         return bankService.consumeTransfer(customerCard, merchantCard, amount);
+    }
+
+    @GetMapping("/fetchCoupon/{couponCode}")
+    public CouponResponseDto getCouponFromOrderAPI(@PathVariable(name = "couponCode") String code) {
+        return couponService.getCoupon(code);
     }
 }

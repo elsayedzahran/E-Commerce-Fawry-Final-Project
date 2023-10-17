@@ -30,11 +30,11 @@ public class StockHistory {
     @Enumerated(EnumType.STRING)
     StockEnum stockEnum;
 
-    @Column(name = "date", updatable = false)
+    @Column(name = "date" , updatable = false)
     @Temporal(TemporalType.DATE)
     Date date = new Date();
 
-    @Column(name = "time", updatable = false)
+    @Column(name = "time" , updatable = false)
     @Temporal(TemporalType.TIME)
     Date time = new Date();
 
@@ -43,8 +43,7 @@ public class StockHistory {
     Inventory inventory;
 
 
-    public StockHistory() {
-    }
+    public StockHistory() {}
 
 
     public StockHistory(String productName, String warehouseName, long quantity, StockEnum stockEnum, Date date, Date time) {

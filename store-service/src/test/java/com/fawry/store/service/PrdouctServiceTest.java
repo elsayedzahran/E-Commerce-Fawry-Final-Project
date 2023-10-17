@@ -7,6 +7,7 @@ import com.fawry.store.externalapi.FetchProductData;
 import com.fawry.store.repos.ProductRepo;
 import com.fawry.store.services.ProductService;
 import com.fawry.store.services.mapper.ProductMapper;
+import com.fawry.store.services.serviceimp.ProductServiceImp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,38 +26,42 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-public class ProductServiceTest {
+public class PrdouctServiceTest {
 
-    final String PRODUCT_NOT_FOUND = "PRODUCT_NOT_FOUND";
     @Mock
     ProductRepo repo;
+
     @Mock
     ProductMapper mapper;
+
     @Mock
     FetchProductData data;
+
     @InjectMocks
-    ProductService service;
+    ProductService service = new ProductServiceImp();
+
+    final String PRODUCT_NOT_FOUND = "PRODUCT_NOT_FOUND";
 
     @Test
-    void testGetAllStockedProducts() {
+    void testGetAllStockedProducts(){
         // arrange
         ProductDto ProductDto = new ProductDto();
         ProductDto.setId(1);
         ProductDto.setName("name");
         ProductDto.setPrice(50.5);
         ProductDto.setCategoryName("category");
-        Product Product = new Product(1, "name", 50.5, "category");
+        Product Product = new Product(1 , "name" , 50.5 , "category");
 
         when(repo.findAll()).thenReturn(List.of(Product));
         when(mapper.toProductDto(Product)).thenReturn(ProductDto);
         // act
-        List<ProductDto> Products = service.getAllStockedProducts();
+        List<ProductDto> Products =  service.getAllStockedProducts();
         // assert
         Assertions.assertThat(Products).isNotNull().hasSize(1);
     }
 
     @Test
-    void testGetProductById() {
+    void testGetProductById(){
         // arrange
         ProductDto ProductDto = new ProductDto();
         ProductDto.setId(1);
@@ -64,36 +69,36 @@ public class ProductServiceTest {
         ProductDto.setPrice(50.5);
         ProductDto.setCategoryName("category");
 
-        Product Product = new Product(1, "name", 50.5, "category");
+        Product Product = new Product(1 , "name" , 50.5 , "category");
 
-        when(repo.findById((long) 1)).thenReturn(Optional.of(Product));
+        when(repo.findById((long)1)).thenReturn(Optional.of(Product));
         when(mapper.toProductDto(Product)).thenReturn(ProductDto);
         // act
-        ProductDto dto = service.getProduct((long) 1);
+        ProductDto dto = service.getProduct((long)1);
         // assert
         assertThat(dto).isNotNull().isEqualTo(ProductDto);
     }
 
     @Test
-    void testGetProductByIdAndNotFound() {
+    void testGetProductByIdAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
-        assertThatThrownBy(() -> service.getProduct((long) 1))
+        assertThatThrownBy(() -> service.getProduct((long)1))
                 .isInstanceOf(NoSuchEntityException.class)
                 .hasMessage(PRODUCT_NOT_FOUND);
     }
 
 
     @Test
-    void testCreateNewProduct() {
+    void testCreateNewProduct(){
         ProductDto ProductDto = new ProductDto();
         ProductDto.setId(1);
         ProductDto.setName("name");
         ProductDto.setPrice(50.5);
         ProductDto.setCategoryName("category");
-        Product Product = new Product(1, "name", 50.5, "category");
+        Product Product = new Product(1 , "name" , 50.5 , "category");
 
         when(repo.save(Product)).thenReturn(Product);
         when(mapper.toProductDto(Product)).thenReturn(ProductDto);
@@ -105,40 +110,40 @@ public class ProductServiceTest {
     }
 
     @Test
-    void testUpdateProductAndProductNotFound() {
+    void testUpdateProductAndProductNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
-        assertThatThrownBy(() -> service.updateProduct(1L, any(ProductDto.class)))
+        assertThatThrownBy(() -> service.updateProduct(1L , any(ProductDto.class)))
                 .isInstanceOf(NoSuchEntityException.class)
                 .hasMessage(PRODUCT_NOT_FOUND);
     }
 
     @Test
-    void testUpdateProduct() {
+    void testUpdateProduct(){
         // arrange
         ProductDto ProductDto = new ProductDto();
         ProductDto.setId(1);
         ProductDto.setName("name");
         ProductDto.setPrice(50.5);
         ProductDto.setCategoryName("category");
-        Product Product = new Product(1, "name", 50.5, "category");
+        Product Product = new Product(1 , "name" , 50.5 , "category");
 
-        when(repo.findById((long) 1)).thenReturn(Optional.ofNullable(Product));
+        when(repo.findById((long)1)).thenReturn(Optional.ofNullable(Product));
         when(mapper.toProductDto(Product)).thenReturn(ProductDto);
         when(repo.save(Product)).thenReturn(Product);
 
         // act
-        ProductDto dto = service.updateProduct(1L, ProductDto);
+        ProductDto dto = service.updateProduct(1L , ProductDto);
         // assert
         assertThat(dto).isNotNull().isEqualTo(ProductDto);
     }
 
     @Test
-    void testDeleteProductAndNotFound() {
+    void testDeleteProductAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.removeProduct(1))
@@ -147,10 +152,10 @@ public class ProductServiceTest {
     }
 
     @Test
-    void testDeleteInventory() {
+    void testDeleteInventory(){
         // arrange;
-        Product Product = new Product(1, "name", 50.5, "category");
-        when(repo.findById((long) 1)).thenReturn(Optional.of(Product));
+        Product Product = new Product(1 , "name" , 50.5 , "category");
+        when(repo.findById((long)1)).thenReturn(Optional.of(Product));
         // act
         org.junit.jupiter.api.Assertions.assertAll(() -> service.removeProduct(1));
     }

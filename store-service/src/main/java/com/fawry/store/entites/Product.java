@@ -27,21 +27,20 @@ public class Product {
     String categoryName;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product" , fetch = FetchType.LAZY , cascade = CascadeType.ALL)
     List<Inventory> inventories = new ArrayList<>();
 
 
-    public Product() {
-    }
+    public Product(){}
 
     public Product(long id, String title, double price, String category) {
         this.id = id;
-        this.name = title;
+        this.name =title ;
         this.price = price;
         this.categoryName = category;
     }
 
-    public boolean addNewInventory(Inventory inventory) {
+    public boolean addNewInventory(Inventory inventory){
         return inventories.add(inventory);
     }
 }

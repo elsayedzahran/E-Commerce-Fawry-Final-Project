@@ -1,22 +1,23 @@
 package com.example.notificationapi.services;
 
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
-    final private String from = "elsayedzahran789@gmail.com";
-    @Autowired
-    private JavaMailSender javaMailSender;
+
+    private final JavaMailSender javaMailSender;
 
     @Override
     public void sendEmail(String to, String subject, String text) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
+            String from = "elsayedzahran789@gmail.com";
             message.setFrom(from);
             message.setTo(to);
             message.setSubject(subject);

@@ -25,37 +25,38 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class StackHistoryServiceTest {
-    final String STOCK_HISTORY_NOT_FOUND = "STOCK_HISTORY_NOT_FOUND";
     @Mock
     StockHistoryRepo repo;
+
     @Mock
     StockHistoryMapper mapper;
+
     @InjectMocks
     StockHistoryService service = new StockHistoryServiceImp();
 
+    final String STOCK_HISTORY_NOT_FOUND = "STOCK_HISTORY_NOT_FOUND";
+
+
+
     @Test
-    void testAllStockHistorys() {
+    void testAllStockHistorys(){
         // arrange
-        StockHistoryDto dto = new StockHistoryDto();
-        dto.setQuantity(50);
-        StockHistory stockHistory = new StockHistory();
-        stockHistory.setQuantity(50);
+        StockHistoryDto dto = new StockHistoryDto(); dto.setQuantity(50);
+        StockHistory stockHistory = new StockHistory(); stockHistory.setQuantity(50);
         when(repo.findAll()).thenReturn(List.of(stockHistory));
         when(mapper.toStockHistoryDto(stockHistory)).thenReturn(dto);
         // act
-        List<StockHistoryDto> histories = service.getAllHistories();
+        List<StockHistoryDto> histories =  service.getAllHistories();
         // assert
         Assertions.assertThat(histories).isNotNull().hasSize(1);
     }
 
     @Test
-    void testGetStockHistoryById() {
+    void testGetStockHistoryById(){
         // arrange
-        StockHistoryDto dto = new StockHistoryDto();
-        dto.setQuantity(50);
-        StockHistory stockHistory = new StockHistory();
-        stockHistory.setQuantity(50);
-        when(repo.findById((long) 1)).thenReturn(Optional.of(stockHistory));
+        StockHistoryDto dto = new StockHistoryDto(); dto.setQuantity(50);
+        StockHistory stockHistory = new StockHistory(); stockHistory.setQuantity(50);
+        when(repo.findById((long)1)).thenReturn(Optional.of(stockHistory));
         when(mapper.toStockHistoryDto(stockHistory)).thenReturn(dto);
         // act
         StockHistoryDto history = service.getHistory(1);
@@ -64,9 +65,9 @@ public class StackHistoryServiceTest {
     }
 
     @Test
-    void testGetStockHistoryByIdAndNotFound() {
+    void testGetStockHistoryByIdAndNotFound(){
         // arrange
-        when(repo.findById((long) 1)).thenReturn(Optional.empty());
+        when(repo.findById((long)1)).thenReturn(Optional.empty());
         // act
         // assert
         assertThatThrownBy(() -> service.getHistory(1))
@@ -76,11 +77,10 @@ public class StackHistoryServiceTest {
 
 
     @Test
-    void testDeleteStockHistory() {
+    void testDeleteStockHistory(){
         // arrange
-        StockHistory stockHistory = new StockHistory();
-        stockHistory.setQuantity(50);
-        when(repo.findById((long) 1)).thenReturn(Optional.of(stockHistory));
+        StockHistory stockHistory = new StockHistory(); stockHistory.setQuantity(50);
+        when(repo.findById((long)1)).thenReturn(Optional.of(stockHistory));
         // act
         org.junit.jupiter.api.Assertions.assertAll(() -> service.removeHistory(1));
     }

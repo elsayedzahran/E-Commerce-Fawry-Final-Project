@@ -17,5 +17,5 @@ public interface CouponRepository extends JpaRepository<Coupon, Long> {
     @Query("SELECT c FROM Coupon c WHERE c.active=false")
     List<Coupon> findAllInactiveCoupons();
 
-    Optional<Coupon> findByCode(String code);
+    Optional<Coupon> findCouponByCode(String code);
 }

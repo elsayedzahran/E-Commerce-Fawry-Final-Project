@@ -7,9 +7,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
-public interface InventoryRepo extends JpaRepository<Inventory, Long> {
-    @Query(value = "select * from inventory  where warehouse_id = :warId and product_id = :productId", nativeQuery = true)
-    Optional<Inventory> findProductQuantity(@Param("warId") long warhouseId, @Param("productId") long productId);
+public interface InventoryRepo extends JpaRepository<Inventory , Long> {
+    @Query(value = "select * from inventory  where warehouse_id = :warId and product_id = :productId" , nativeQuery = true)
+    Optional<Inventory> findProductQuantity(@Param("warId") long warhouseId , @Param("productId") long productId);
 
-    Optional<Inventory> findInventoryByProduct_IdAndWarehouse_Id(long war, long prod);
+    Optional<Inventory> findInventoryByProduct_IdAndWarehouse_Id(long war , long prod);
 }

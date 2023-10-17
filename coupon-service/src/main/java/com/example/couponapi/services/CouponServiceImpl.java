@@ -8,6 +8,7 @@ import com.example.couponapi.models.mappers.CouponMapper;
 import com.example.couponapi.repositories.ConsumptionRepository;
 import com.example.couponapi.repositories.CouponRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Validated
+@Transactional
 @RequiredArgsConstructor
 public class CouponServiceImpl implements CouponService {
 
@@ -36,12 +38,18 @@ public class CouponServiceImpl implements CouponService {
         return coupons.stream()
                 .map(couponMapper::toCouponDto)
                 .collect(Collectors.toList());
-
     }
 
     @Override
     public CouponDTO findCouponById(Long id) {
         Coupon coupon = couponRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Coupon was not found"));
+        return couponMapper.toCouponDto(coupon);
+    }
+
+    @Override
+    public CouponDTO findCouponByCode(String code) {
+        Coupon coupon = couponRepository.findCouponByCode(code)
                 .orElseThrow(() -> new EntityNotFoundException("Coupon was not found"));
         return couponMapper.toCouponDto(coupon);
     }
@@ -71,7 +79,7 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public CouponForOrderDTO consumeCoupon(String couponCode, Long orderId) {
         // Check if coupon exists
-        Coupon coupon = couponRepository.findByCode(couponCode)
+        Coupon coupon = couponRepository.findCouponByCode(couponCode)
                 .orElseThrow(() -> new EntityNotFoundException("Consumption Failed: coupon was not found"));
 
         // Decrement maximum usages, check coupon expiry date and persist updated coupon

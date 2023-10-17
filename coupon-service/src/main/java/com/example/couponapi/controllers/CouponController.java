@@ -30,8 +30,14 @@ public class CouponController {
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<CouponDTO> findCouponById(@PathVariable Long id) {
+    public CouponDTO findCouponById(@PathVariable Long id) {
         CouponDTO couponDTO = couponService.findCouponById(id);
+        return couponDTO;
+    }
+
+    @GetMapping("/find")
+    public ResponseEntity<CouponDTO> findCouponByCode(@RequestParam String code) {
+        CouponDTO couponDTO = couponService.findCouponByCode(code);
         return new ResponseEntity<>(couponDTO, HttpStatus.OK);
     }
 

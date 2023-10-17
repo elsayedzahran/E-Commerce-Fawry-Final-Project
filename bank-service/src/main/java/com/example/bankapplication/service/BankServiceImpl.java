@@ -10,6 +10,7 @@ import com.example.bankapplication.mapper.AccountMapper;
 import com.example.bankapplication.repo.AccountRepository;
 import com.example.bankapplication.repo.TransactionRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.ObjectNotFoundException;
@@ -22,6 +23,7 @@ import java.util.List;
 
 @Service
 @Validated
+@Transactional
 @RequiredArgsConstructor
 public class BankServiceImpl implements BankService {
 
@@ -97,9 +99,10 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    public AccountResponse transfer(Long cardNumber1, Long cardNumber2, BigDecimal amount) {
+    public Boolean transfer(Long cardNumber1, Long cardNumber2, BigDecimal amount) {
         withdraw(cardNumber1, amount);
-        return deposit(cardNumber2, amount);
+        deposit(cardNumber2, amount);
+        return Boolean.TRUE;
     }
 
     @Override

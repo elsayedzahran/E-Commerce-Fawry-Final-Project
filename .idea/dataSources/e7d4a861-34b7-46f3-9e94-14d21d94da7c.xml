@@ -1125,112 +1125,109 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="295" parent="1" name="product_stock">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-10-17.19:11:10</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-10-17.14:11:10</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-10-17.21:53:09</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-10-17.16:53:09</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="296" parent="1" name="sakila">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="297" parent="1" name="store">
+    <schema id="297" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="sys">
+    <schema id="298" parent="1" name="world">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="299" parent="1" name="world">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <user id="300" parent="1" name="bank_manager"/>
-    <user id="301" parent="1" name="bookstore_manager"/>
-    <user id="302" parent="1" name="coupon_manager"/>
-    <user id="303" parent="1" name="mysql.infoschema">
+    <user id="299" parent="1" name="bank_manager"/>
+    <user id="300" parent="1" name="bookstore_manager"/>
+    <user id="301" parent="1" name="coupon_manager"/>
+    <user id="302" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="304" parent="1" name="mysql.session">
+    <user id="303" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="305" parent="1" name="mysql.sys">
+    <user id="304" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="306" parent="1" name="product_manager"/>
-    <user id="307" parent="1" name="root">
+    <user id="305" parent="1" name="product_manager"/>
+    <user id="306" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="308" parent="295" name="category">
+    <table id="307" parent="295" name="category">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="295" name="product">
+    <table id="308" parent="295" name="product">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="310" parent="308" name="category_id">
+    <column id="309" parent="307" name="category_id">
       <AutoIncrement>27</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="308" name="category_name">
+    <column id="310" parent="307" name="category_name">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <index id="312" parent="308" name="PRIMARY">
+    <index id="311" parent="307" name="PRIMARY">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="313" parent="308" name="PRIMARY">
+    <key id="312" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="314" parent="309" name="id">
+    <column id="313" parent="308" name="id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="315" parent="309" name="name">
+    <column id="314" parent="308" name="name">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="316" parent="309" name="price">
+    <column id="315" parent="308" name="price">
       <DasType>double|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="317" parent="309" name="category_id">
+    <column id="316" parent="308" name="category_id">
       <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="318" parent="309" name="image_url">
+    <column id="317" parent="308" name="image_url">
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <foreign-key id="319" parent="309" name="category_id">
+    <foreign-key id="318" parent="308" name="category_id">
       <ColNames>category_id</ColNames>
       <RefColNames>category_id</RefColNames>
       <RefTableName>category</RefTableName>
     </foreign-key>
-    <index id="320" parent="309" name="PRIMARY">
+    <index id="319" parent="308" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="321" parent="309" name="category_id_idx">
+    <index id="320" parent="308" name="category_id_idx">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="322" parent="309" name="PRIMARY">
+    <key id="321" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

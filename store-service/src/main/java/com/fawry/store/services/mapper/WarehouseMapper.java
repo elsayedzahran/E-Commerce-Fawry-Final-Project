@@ -8,6 +8,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface WarehouseMapper {
     Warehouse toWarehouse(WarehouseDto warehouseDto);
-
     WarehouseDto toWarehouseDto(Warehouse warehouse);
 }

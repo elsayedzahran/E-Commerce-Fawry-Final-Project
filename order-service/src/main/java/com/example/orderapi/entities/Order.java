@@ -19,7 +19,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String email;
-    private String copoun;
+    private String coupon;
     private int storeId;
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;

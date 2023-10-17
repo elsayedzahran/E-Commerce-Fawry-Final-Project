@@ -3,25 +3,24 @@ package com.example.orderapi.services;
 import com.example.orderapi.dtos.OrderRequestDto;
 import com.example.orderapi.entities.Order;
 import com.example.orderapi.entities.OrderItem;
+import com.example.orderapi.mapper.Mapper;
 import com.example.orderapi.repositories.OrderItemRepo;
 import com.example.orderapi.repositories.OrderRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
-    @Autowired
-    private OrderItemRepo orderItemsRepo;
-    @Autowired
-    private OrderRepo orderRepo;
-    //    @Autowired
-//    private WebClient webClient;
-    @Autowired
-    private StoreService storeService;
-    @Autowired
-    private Mapper mapper;
+
+    private final OrderItemRepo orderItemsRepo;
+    private final OrderRepo orderRepo;
+    private final StoreService storeService;
+    private final Mapper mapper;
+    private final WebClient webClient;
 
     @Override
     public void createOrder(OrderRequestDto orderRequestDto, String email, String accountNumber, int storeId) {
@@ -30,15 +29,15 @@ public class OrderServiceImpl implements OrderService {
 
         List<OrderItem> orderItems = orderRequestDto.getOrderItemsDtos()
                 .stream()
-                .map(orderItemsDto -> mapper.mapToOrderItemEntity(orderItemsDto))
+                .map(mapper::mapToOrderItemEntity)
                 .toList();
         order.setOrderItems(orderItems);
         order.setEmail("test@test.com");
-        order.setCopoun("sasasa");
+        order.setCoupon("sasasa");
         order.setStoreId(1);
 
         List<Integer> productIds = orderItems.stream()
-                .map(orderItem -> orderItem.getProductId())
+                .map(OrderItem::getProductId)
                 .toList();
         boolean ok = storeService.validateProductsInStore(productIds);
 
@@ -55,8 +54,11 @@ public class OrderServiceImpl implements OrderService {
         //send notification
     }
 
+
+
+
     @Override
-    public void createOrderWithCopoun(OrderRequestDto order, String email, String accountNumber, int storeId) {
+    public void createOrderWithCoupon(OrderRequestDto order, String email, String accountNumber, int storeId) {
         // validate order items
 
         //git cost

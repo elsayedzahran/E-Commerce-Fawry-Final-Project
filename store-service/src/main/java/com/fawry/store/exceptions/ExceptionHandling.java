@@ -12,35 +12,34 @@ import java.util.Date;
 public class ExceptionHandling {
 
     @ExceptionHandler(NoSuchEntityException.class)
-    public ResponseEntity<?> noSuchEntityException(NoSuchEntityException exception, WebRequest webRequest) {
+    public ResponseEntity<?> noSuchEntityException(NoSuchEntityException exception , WebRequest webRequest){
         ErrorMessage errorDetails = new ErrorMessage(
-                HttpStatus.NOT_FOUND.value(),
-                exception.getMessage(),
-                new Date(),
+                HttpStatus.NOT_FOUND.value() ,
+                exception.getMessage() ,
+                new Date() ,
                 webRequest.getDescription(true)
         );
-        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorDetails , HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ConsumeProductException.class)
-    ResponseEntity<?> consumeProductExceptionHandling(ConsumeProductException exception, WebRequest webRequest) {
+    ResponseEntity<?> consumeProductExceptionHandling(ConsumeProductException exception , WebRequest webRequest){
         ErrorMessage errorDetails = new ErrorMessage(
-                HttpStatus.NOT_FOUND.value(),
-                exception.getMessage(),
-                new Date(),
+                HttpStatus.NOT_FOUND.value() ,
+                exception.getMessage() ,
+                new Date() ,
                 webRequest.getDescription(true)
         );
-        return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorDetails , HttpStatus.NOT_FOUND);
     }
-
     @ExceptionHandler(Exception.class)
-    ResponseEntity<?> globalExceptionHandling(Exception exception, WebRequest request) {
+    ResponseEntity<?> globalExceptionHandling(Exception exception , WebRequest request){
         ErrorMessage errorMessage = new ErrorMessage(
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                exception.getMessage(),
-                new Date(),
+                exception.getMessage() ,
+                new Date() ,
                 request.getDescription(false)
         );
-        return new ResponseEntity<>(errorMessage, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(errorMessage , HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

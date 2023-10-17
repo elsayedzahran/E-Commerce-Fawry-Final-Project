@@ -1,8 +1,8 @@
 package com.fawry.store.exceptions;
 
-public class NoSuchEntityException extends RuntimeException {
+public class NoSuchEntityException extends RuntimeException{
 
-    public NoSuchEntityException(String message) {
+    public NoSuchEntityException(String message){
         super(message);
     }
 }

@@ -7,7 +7,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface StockHistoryMapper {
 
-    StockHistoryDto toStockHistoryDto(StockHistory stockHistory);
-
+    StockHistoryDto toStockHistoryDto (StockHistory stockHistory);
     StockHistory toStockHistory(StockHistoryDto stockHistoryDto);
 }
