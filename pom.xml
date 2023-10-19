@@ -21,6 +21,8 @@
         <module>coupon-service</module>
         <module>notification-service</module>
         <module>user-service</module>
+        <module>gateway-service</module>
+        <module>discovery-server</module>
     </modules>
 
     <properties>

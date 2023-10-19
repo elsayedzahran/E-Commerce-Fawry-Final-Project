@@ -1,0 +1,23 @@
+
+g	java:S117«"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾Õè
+s
+java:S1488Ô"\Immediately return this expression instead of assigning it to the temporary variable "data".(é€ö«
+V	java:S125"<This block of commented-out lines of code should be removed.(Â–Åğıÿÿÿÿ
+s	java:S116+"^Rename this field "WAREHOUSE_NOT_FOUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹Öõ 
+€	java:S116,"fRename this field "QUANTITY_GREATER_THAN_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ß¬†Ûüÿÿÿÿ
+q	java:S116."\Rename this field "PRODUCT_OUT_STOCK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó†ßù
+q	java:S116/"\Rename this field "PRODUCT_NOT_FOUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾Ÿ‹¸
+7
+java:S1170+"!Make this final field static too.(¹Öõ 
+<
+java:S1170,"!Make this final field static too.(ß¬†Ûüÿÿÿÿ
+7
+java:S1170."!Make this final field static too.(Ó†ßù
+7
+java:S1170/"!Make this final field static too.(¾Ÿ‹¸
+L
+java:S1854™"5Remove this useless assignment to local variable "s".(«ïõÊ
+=
+java:S1481™"&Remove this unused "s" local variable.(«ïõÊ
+^
+java:S1126­"BReplace this if-then-else statement by a single method invocation.(ñÂ ´øÿÿÿÿ
