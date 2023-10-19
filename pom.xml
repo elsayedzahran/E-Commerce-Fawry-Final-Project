@@ -20,6 +20,7 @@
         <module>bank-service</module>
         <module>coupon-service</module>
         <module>notification-service</module>
+        <module>user-service</module>
     </modules>
 
     <properties>
