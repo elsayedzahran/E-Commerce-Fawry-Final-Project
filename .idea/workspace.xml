@@ -4,117 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af093936-0fbe-4260-b6ab-539b5fc4af32" name="Changes" comment="Assembled all APIs as modules in same project.&#10;Added constructor injection instead of field injection in store API">
-      <change afterPath="$PROJECT_DIR$/discovery-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/java/com/example/discoveryserver/DiscoveryServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/test/java/com/example/discoveryserver/DiscoveryServerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/store.4fiKBg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/product_stock.xnedUg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/product_stock.xnedUg.meta" afterDir="false" />
+    <list default="true" id="c5b5c0ca-ebd1-4298-a580-00bfbf070c60" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/dtos/PostProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284/storage_v2/_src_/schema/bankdb.unPFrA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8c7ea9ed-531a-44b4-918f-a58b65548284/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/banktodb.dfA-kQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/8f7bb3f6-9bd9-40f0-9d99-def6a1e8cb0f/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/banktodb.dfA-kQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/couponsdb.SyrBUw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/932704ed-0aa1-43ca-b54e-4b44e23e8453/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/banktodb.dfA-kQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/orderdb.TPgMuA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d3d07ac7-5f59-437d-85c2-b9f92ffcb9b7/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/product_stock.xnedUg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/store.4fiKBg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d4a861-34b7-46f3-9e94-14d21d94da7c/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/controller/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/controller/BankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/service/BankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/service/BankService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/service/BankServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/service/BankServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bank-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/controllers/CouponController.java" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/controllers/CouponController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/repositories/CouponRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/repositories/CouponRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/services/CouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/services/CouponService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/services/CouponServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/services/CouponServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/NotificationApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/NotificationApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/resources/EmailResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/resources/EmailResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/services/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/services/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/entities/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/entities/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/resources/OrderResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/resources/OrderResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/BankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/BankService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/CouponService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/CouponService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/mapper/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/MapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/mapper/MapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coupon-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/StoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/services/StoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/StoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/StoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/config/WebClientConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/StockHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/StockHistoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/WarehouseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/controller/WarehouseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/InventoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/InventoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/StockHistoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/StockHistoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/enums/ProductDtoEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/enums/ProductDtoEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/StockHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/StockHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/enums/StockEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/entites/enums/StockEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ConsumeProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ConsumeProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ErrorMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ExceptionHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/ExceptionHandling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/NoSuchEntityException.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/exceptions/NoSuchEntityException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/PostProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/dtos/PostProductDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/externalapi/FetchProductData.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/externalapi/FetchProductData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/InventoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/InventoryRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/ProductRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/ProductRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/StockHistoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/StockHistoryRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/WarehouseRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/repos/WarehouseRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/StockHistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/StockHistoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/WarehouseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/WarehouseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/InventoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/InventoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/StockHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/StockHistoryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/WarehouseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/mapper/WarehouseMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/InventoryServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/InventoryServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/ProductServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/ProductServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/StockHistoryServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/StockHistoryServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/WarehouseServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/services/serviceimp/WarehouseServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/InventoryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/InventoryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/PrdouctServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/StackHistoryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/StackHistoryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/WarehouseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/test/java/com/fawry/store/service/WarehouseServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
-  <component name="ProjectId" id="2WtDbUpeeqxmx5hjh042nD8OhAU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2WyqBy6e8NkyVUrFakWSeYjpcPM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -125,52 +97,17 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Jalal/Desktop/Workspace/Projects/Fawry-allAPIs/E-commerce/store-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle.jdbc.driver.OracleDriver",
-      "mysql"
-    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jalal\Desktop\Workspace\Projects\Fawry-allAPIs\E-commerce\store-service" />
-      <recent name="C:\Users\Jalal\Desktop\Workspace\Projects\Fawry-allAPIs\E-commerce\order-service" />
-      <recent name="C:\Users\Jalal\Desktop\Workspace\Projects\Fawry-allAPIs\E-commerce\notification-service" />
-      <recent name="C:\Users\Jalal\Desktop\Workspace\Projects\Fawry-allAPIs\E-commerce\product-service" />
-      <recent name="C:\Users\Jalal\Desktop\Workspace\Projects\Fawry-allAPIs\E-commerce\bank-service" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.example.couponapi.models" />
-    </key>
-  </component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean verify" />
-      <command value="mvn clean" />
-    </option>
-  </component>
-  <component name="RunManager" selected="Spring Boot.CouponApiApplication">
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.BankApplication">
     <configuration name="BankApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="bank-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bankapplication.BankApplication" />
       <method v="2">
@@ -184,15 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DiscoveryServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="discovery-server" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.discoveryserver.DiscoveryServerApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="NotificationApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="notification-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.notificationapi.NotificationApiApplication" />
       <method v="2">
@@ -200,7 +129,6 @@
       </method>
     </configuration>
     <configuration name="OrderApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="order-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.orderapi.OrderApiApplication" />
       <method v="2">
@@ -208,7 +136,6 @@
       </method>
     </configuration>
     <configuration name="ProductApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="product-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fawryfinalproject.productapi.ProductApiApplication" />
       <method v="2">
@@ -216,54 +143,26 @@
       </method>
     </configuration>
     <configuration name="StoreApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="store-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.fawry.store.StoreApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="HTTP Request.generated-requests | #3" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="af093936-0fbe-4260-b6ab-539b5fc4af32" name="Changes" comment="" />
-      <created>1697543058120</created>
+      <changelist id="c5b5c0ca-ebd1-4298-a580-00bfbf070c60" name="Changes" comment="" />
+      <created>1697715038387</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1697543058120</updated>
-      <workItem from="1697543061656" duration="22194000" />
+      <updated>1697715038387</updated>
+      <workItem from="1697715039929" duration="1250000" />
     </task>
-    <task id="LOCAL-00001" summary="Assembled all APIs as modules in same project.&#10;Added constructor injection instead of field injection in store API">
-      <option name="closed" value="true" />
-      <created>1697552902588</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1697552902588</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Assembled all APIs as modules in same project.&#10;Added constructor injection instead of field injection in store API">
-      <option name="closed" value="true" />
-      <created>1697552986417</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1697552986417</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Assembled all APIs as modules in same project.&#10;Added constructor injection instead of field injection in store API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Assembled all APIs as modules in same project.&#10;Added constructor injection instead of field injection in store API" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

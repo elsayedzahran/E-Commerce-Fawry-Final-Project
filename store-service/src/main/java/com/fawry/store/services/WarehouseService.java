@@ -16,8 +16,9 @@ public interface WarehouseService {
     InventoryDto stockProduct(long warehouseId , long productId , long quantity);
 
     PostProductDtoQuantity getProductQuantity(long warehouseId , long productId);
-    List<PostProductDto> consumeProducts(long warehouseId , Map<Integer , Integer> IdsQuantity);
-    PostProductDto consumeProduct(long warehouseId , long productId , long consumeQuan);
+    List<PostProductDtoQuantity> consumeProducts(long warehouseId , Map<Integer , Integer> IdsQuantity);
+    List<PostProductDto> checkStockOfConsumedProduct(long warehouseId , Map<Integer , Integer> idsQuantity);
+    PostProductDtoQuantity consumeProduct(long warehouseId , long productId , long consumeQuan);
     List<ProductDtoData> getProductsOfWarehouse(long warehouseId);
     List<ProductDtoData> getSearchedProductsOfWarehouse(long warehouseId , String text);
 

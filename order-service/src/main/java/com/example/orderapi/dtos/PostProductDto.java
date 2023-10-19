@@ -1,4 +1,4 @@
-package com.fawry.store.dtos;
+package com.example.orderapi.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,4 +11,5 @@ public class PostProductDto {
     double price;
     long quantity;
     boolean inStock;
+
 }

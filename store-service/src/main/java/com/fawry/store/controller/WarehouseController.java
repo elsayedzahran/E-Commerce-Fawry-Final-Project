@@ -1,5 +1,6 @@
 package com.fawry.store.controller;
 
+import com.fawry.store.dtos.PostProductDto;
 import com.fawry.store.dtos.WarehouseDto;
 import com.fawry.store.externalapi.FetchProductData;
 import com.fawry.store.services.WarehouseService;
@@ -8,12 +9,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/warehouses")
 public class WarehouseController {
-    
+
     @Autowired
     WarehouseService service;
 
@@ -67,10 +69,13 @@ public class WarehouseController {
     ResponseEntity<?> consumeQuantityOfProduct(@PathVariable("warId") long warId , @PathVariable("prodId") long prodId , @PathVariable("quantity") long q){
         return new ResponseEntity<>(service.consumeProduct(warId , prodId , q) , HttpStatus.ACCEPTED);
     }
-
+    @PostMapping("/{warId}/check/product")
+    ResponseEntity<List<PostProductDto>> checkStockOfConsumedProduct(@PathVariable("warId") long warId , @RequestBody Map<Integer , Integer> idsQuan){
+        return new ResponseEntity<>(service.checkStockOfConsumedProduct(warId , idsQuan) , HttpStatus.ACCEPTED);
+    }
     @PostMapping("/{warId}/products/consume")
-    ResponseEntity<?> consumeQuantityOfProducts(@PathVariable("warId") long warId , @RequestBody Map<Integer , Integer> idsQuan){
-        return new ResponseEntity<>(service.consumeProducts(warId , idsQuan) , HttpStatus.ACCEPTED);
+    Boolean consumeQuantityOfProducts(@PathVariable("warId") long warId , @RequestBody Map<Integer , Integer> idsQuan){
+        return service.consumeProducts(warId , idsQuan) != null;
     }
 
     @GetMapping("/{id}/inventories")

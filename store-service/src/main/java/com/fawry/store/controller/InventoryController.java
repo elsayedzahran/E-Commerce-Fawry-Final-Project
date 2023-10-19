@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/inventories")
 public class InventoryController {
-    
+
     @Autowired
     InventoryService service;
 
@@ -42,6 +42,7 @@ public class InventoryController {
         service.destroyInventory(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 
 
 }

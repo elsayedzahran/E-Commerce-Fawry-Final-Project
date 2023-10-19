@@ -39,7 +39,6 @@ public class OrderServiceImpl implements OrderService {
         List<Integer> productIds = orderItems.stream()
                 .map(OrderItem::getProductId)
                 .toList();
-        boolean ok = storeService.validateProductsInStore(productIds);
 
         Order save = orderRepo.save(order);
 

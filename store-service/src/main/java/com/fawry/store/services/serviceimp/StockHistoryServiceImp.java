@@ -18,6 +18,7 @@ import java.util.NoSuchElementException;
 @Primary
 public class StockHistoryServiceImp implements StockHistoryService {
 
+
     @Autowired
     StockHistoryRepo repo;
 

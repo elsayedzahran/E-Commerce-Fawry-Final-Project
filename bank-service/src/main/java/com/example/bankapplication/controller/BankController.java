@@ -5,6 +5,7 @@ import com.example.bankapplication.dto.AccountResponse;
 import com.example.bankapplication.dto.TransactionResponse;
 import com.example.bankapplication.service.BankService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,6 @@ import java.util.List;
 public class BankController {
 
     private final BankService bankService;
-
     @GetMapping("/Accounts")
     public ResponseEntity<List<AccountResponse>> getAccounts() {
         List<AccountResponse> accountResponseList = bankService.getAllAccounts();

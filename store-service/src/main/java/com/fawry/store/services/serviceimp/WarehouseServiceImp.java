@@ -1,8 +1,8 @@
 package com.fawry.store.services.serviceimp;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fawry.store.dtos.*;
+//import com.fawry.store.entites.Product;
 import com.fawry.store.dtos.enums.ProductDtoEnum;
 import com.fawry.store.entites.Inventory;
 import com.fawry.store.entites.Product;
@@ -28,26 +28,18 @@ import java.util.*;
 @Service
 @Primary
 public class WarehouseServiceImp implements WarehouseService {
-
     @Autowired
     WarehouseRepo repo;
-
     @Autowired
     WarehouseMapper mapper;
-
-
     @Autowired
     InventoryMapper inventoryMapper;
-
     @Autowired
     ProductMapper productMapper;
-
     @Autowired
     StockHistoryMapper historyMapper;
-
     @Autowired
     FetchProductData productData;
-
     final String WAREHOUSE_NOT_FOUND = "WAREHOUSE_NOT_FOUND";
     final String QUANTITY_GREATER_THAN_STOCK = "QUANTITY_GREATER_THAN_STOCK";
 
@@ -67,7 +59,7 @@ public class WarehouseServiceImp implements WarehouseService {
     @Override
     public WarehouseDto getWarehouse(long id) {
         return mapper.toWarehouseDto(repo.findById(id)
-                .orElseThrow(() -> new NoSuchEntityException(WAREHOUSE_NOT_FOUND)));
+                .orElseThrow(()-> new NoSuchEntityException(WAREHOUSE_NOT_FOUND)));
     }
 
 
@@ -124,7 +116,7 @@ public class WarehouseServiceImp implements WarehouseService {
 
         if(warehouseInventory.isEmpty()){
 
-            ProductDto productDto = (ProductDto) productData.fetchProduct(ProductDtoEnum.GET , productId).block();
+            ProductDto productDto = (ProductDto) productData.fetchProduct(ProductDtoEnum.GET , productId);
 
 
             Product product = productMapper.toProduct(productDto);
@@ -153,7 +145,8 @@ public class WarehouseServiceImp implements WarehouseService {
 
     @Override
     public PostProductDtoQuantity getProductQuantity(long warehouseId , long productId) {
-        Warehouse warehouse = repo.findById(warehouseId).orElseThrow(()-> new NoSuchEntityException(WAREHOUSE_NOT_FOUND));
+        Warehouse warehouse = repo.findById(warehouseId)
+                .orElseThrow(()-> new NoSuchEntityException(WAREHOUSE_NOT_FOUND));
 
         List<Inventory> products = warehouse.getInventories()
                 .stream()
@@ -175,21 +168,34 @@ public class WarehouseServiceImp implements WarehouseService {
 
 
     @Override
-    public List<PostProductDto> consumeProducts(long warehouseId, Map<Integer, Integer> IdsQuantity) {
+    public List<PostProductDtoQuantity> consumeProducts(long warehouseId, Map<Integer, Integer> IdsQuantity) {
+        Warehouse warehouse = mapper.toWarehouse(getWarehouse(warehouseId));
+        List<Inventory> inventories = warehouse.getInventories();
+
+        List<PostProductDtoQuantity> consumedProducts = new ArrayList<>();
+
+        for ( Map.Entry<Integer , Integer> map : IdsQuantity.entrySet()) {
+            consumedProducts.add(getConsumedProduct(warehouse , inventories , map.getKey() , map.getValue()));
+        }
+        return consumedProducts;
+    }
+
+    @Override
+    public List<PostProductDto> checkStockOfConsumedProduct(long warehouseId, Map<Integer, Integer> idsQuantity) {
         Warehouse warehouse = mapper.toWarehouse(getWarehouse(warehouseId));
         List<Inventory> inventories = warehouse.getInventories();
 
         List<PostProductDto> consumedProducts = new ArrayList<>();
 
-        for (Map.Entry<Integer , Integer> map : IdsQuantity.entrySet()) {
-            consumedProducts.add(getConsumedProduct(warehouse , inventories , map.getKey() , map.getValue()));
+        for ( Map.Entry<Integer , Integer> map : idsQuantity.entrySet()) {
+            consumedProducts.add(getCheckedConsumedProd(inventories , map.getKey() , map.getValue()));
         }
         return consumedProducts;
     }
 
 
     @Override
-    public PostProductDto consumeProduct(long warehouseId, long productId, long consumeQuan) {
+    public PostProductDtoQuantity consumeProduct(long warehouseId, long productId, long consumeQuan) {
         Warehouse warehouse = mapper.toWarehouse(getWarehouse(warehouseId));
         List<Inventory> inventories = warehouse.getInventories();
         return getConsumedProduct(warehouse , inventories , productId , consumeQuan);
@@ -200,10 +206,10 @@ public class WarehouseServiceImp implements WarehouseService {
     public List<ProductDtoData> getProductsOfWarehouse(long warehouseId) {
         Warehouse warehouse = mapper.toWarehouse(getWarehouse(warehouseId));
 
-         return getProductIds(warehouse)
+        return getProductIds(warehouse)
                 .stream()
                 .map(id -> {
-                    ProductDtoData data = (ProductDtoData) productData.fetchProduct(ProductDtoEnum.GET_ALL,id).block();
+                    ProductDtoData data = (ProductDtoData) productData.fetchProduct(ProductDtoEnum.GET_ALL,id);
                     return data;
                 })
                 .toList();
@@ -212,8 +218,7 @@ public class WarehouseServiceImp implements WarehouseService {
     @Override
     public List<ProductDtoData> getSearchedProductsOfWarehouse(long warehouseId, String text) {
         Warehouse warehouse = mapper.toWarehouse(getWarehouse(warehouseId));
-        ObjectMapper mapper1 = new ObjectMapper();
-        List<ProductDtoData> products = mapper1.convertValue(productData.fetchSearchedProducts(text).block(), new TypeReference<List<ProductDtoData>>() { });
+        List<ProductDtoData> products = productData.fetchSearchedProducts(text);
         List<Long> productsIds = getProductIds(warehouse);
         return products.stream()
                 .filter(p->Collections.binarySearch(productsIds , p.getId()) > -1)
@@ -235,10 +240,10 @@ public class WarehouseServiceImp implements WarehouseService {
 
 
     private List<Inventory> getInventoryOfProduct(List<Inventory> inventories , long productId){
-         return  inventories
-                    .stream()
-                    .filter(inventory1 -> inventory1.getProduct().getId() == productId)
-                    .toList();
+        return  inventories
+                .stream()
+                .filter(inventory1 -> inventory1.getProduct().getId() == productId)
+                .toList();
     }
 
 
@@ -249,7 +254,7 @@ public class WarehouseServiceImp implements WarehouseService {
                 .toList();
     }
 
-    private PostProductDto getConsumedProduct(Warehouse warehouse , List<Inventory> inventories , long productId, long consumeQuan){
+    private PostProductDtoQuantity getConsumedProduct(Warehouse warehouse , List<Inventory> inventories , long productId, long consumeQuan){
 
         List<Inventory> warehouseInventoryOfProduct =  getInventoryOfProduct(inventories , productId);
 
@@ -259,21 +264,46 @@ public class WarehouseServiceImp implements WarehouseService {
 
         Inventory inventory = warehouseInventoryOfProduct.get(0);
 
-        if (inventory.getProductQuantity() == 0){
+        if(inventory.getProductQuantity() == 0){
             throw new ConsumeProductException(PRODUCT_OUT_STOCK);
         }
-        else if (inventory.getProductQuantity() < consumeQuan){
+        else if(inventory.getProductQuantity() < consumeQuan){
             throw new ConsumeProductException(QUANTITY_GREATER_THAN_STOCK + " " + "Quantity = " + inventory.getProductQuantity());
         }
 
-        PostProductDto product= (PostProductDto) productData.fetchProduct(ProductDtoEnum.POST , productId).block();
+        Product product = inventory.getProduct();
 
         inventory.setProductQuantity(inventory.getProductQuantity() - consumeQuan);
         StockHistory history = makeStockHistory(inventory , consumeQuan);
         history.setStockEnum(StockEnum.CONSUME);
+        history.setInventory(inventory);
         inventory.addHistory(history);
-        repo.save(warehouse);
+        Warehouse s = repo.save(warehouse);
 
+        PostProductDtoQuantity productDtoQuantity = new PostProductDtoQuantity();
+        productDtoQuantity.setId(product.getId());
+        productDtoQuantity.setName(product.getName());
+        productDtoQuantity.setQuantity(consumeQuan);
+
+        return productDtoQuantity;
+    }
+
+
+    private PostProductDto getCheckedConsumedProd(List<Inventory> inventories ,long productId, long quantity){
+        List<Inventory> warehouseInventoryOfProduct =  getInventoryOfProduct(inventories , productId);
+
+        if (warehouseInventoryOfProduct.isEmpty()){
+            throw new NoSuchEntityException(PRODUCT_NOT_FOUND);
+        }
+
+        Inventory inventory = warehouseInventoryOfProduct.get(0);
+        PostProductDto product= (PostProductDto) productData.fetchProduct(ProductDtoEnum.POST , productId);
+        if(inventory.getProductQuantity() == 0 || inventory.getProductQuantity() < quantity){
+            product.setInStock(false);
+        }else {
+            product.setInStock(true);
+        }
+        product.setQuantity(quantity);
         return product;
     }
 

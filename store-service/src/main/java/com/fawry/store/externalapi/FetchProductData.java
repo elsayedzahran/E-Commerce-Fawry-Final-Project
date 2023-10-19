@@ -1,5 +1,7 @@
 package com.fawry.store.externalapi;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fawry.store.dtos.PostProductDto;
 import com.fawry.store.dtos.ProductDto;
 import com.fawry.store.dtos.ProductDtoData;
@@ -16,29 +18,40 @@ import java.util.List;
 public class FetchProductData {
 
     private final String PRODUCT_NOT_FOUND = "PRODUCT_NOT_FOUND";
-    private final String URL = "http://localhost:5000/products";
+    private final String URL = "http://localhost:8084/products";
 
 
-    public Mono<?> fetchProduct (ProductDtoEnum dtoEnum, long productId){
+    public Object fetchProduct (ProductDtoEnum dtoEnum, long productId){
         WebClient webClient = WebClient.create(URL);
         Mono<?> productDtoMono = null;
-        switch (dtoEnum) {
-            case GET -> productDtoMono = webClient.get()
-                    .uri("/{id}", productId)
-                    .retrieve()
-                    .bodyToMono(ProductDto.class);
-            case POST -> productDtoMono = webClient.get()
-                    .uri("/{id}", productId)
-                    .retrieve()
-                    .bodyToMono(PostProductDto.class);
-            case GET_ALL -> productDtoMono = webClient.get()
-                    .uri("/{id}", productId)
-                    .retrieve()
-                    .bodyToMono(ProductDtoData.class);
+        switch (dtoEnum){
+            case GET : {
+                productDtoMono = webClient.get()
+                        .uri("/{id}", productId)
+                        .retrieve()
+                        .bodyToMono(ProductDto.class);
+                productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
+                return  productDtoMono.block();
+            }
+            case POST: {
+                productDtoMono = webClient.get()
+                        .uri("/{id}", productId)
+                        .retrieve()
+                        .bodyToMono(PostProductDto.class);
+                productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
+                return  productDtoMono.block();
+            }
+            case GET_ALL:{
+                productDtoMono = webClient.get()
+                        .uri("/{id}", productId)
+                        .retrieve()
+                        .bodyToMono(ProductDtoData.class);
+                productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
+                return  productDtoMono.block();
+            }
         }
-
-        productDtoMono = productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
-        return productDtoMono;
+        productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
+        return null;
     }
 
     public Mono<List> fetchProductsOfWarehouse(List<Long> ids){
@@ -55,7 +68,7 @@ public class FetchProductData {
     }
 
 
-    public Mono<?> fetchAllProducts (){
+    public List<ProductDtoData> fetchAllProducts (){
         WebClient webClient = WebClient.create(URL);
         Mono<List> productDtoMono = webClient
                 .get()
@@ -63,23 +76,26 @@ public class FetchProductData {
                 .retrieve()
                 .bodyToMono(List.class);
         productDtoMono = productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
-        return productDtoMono;
+        ObjectMapper mapper1 = new ObjectMapper();
+        return mapper1.convertValue(productDtoMono.block(), new TypeReference<List<ProductDtoData>>() { });
     }
 
-    public Mono<List> fetchSearchedProducts(String text){
+    public   List<ProductDtoData> fetchSearchedProducts(String text){
         WebClient webClient = WebClient.create(URL);
         Mono<List> productDtoMono = webClient
                 .post()
                 .uri(uriBuilder ->
-                    uriBuilder.path("/search")
-                              .queryParam("product" , text)
-                              .build()
+                        uriBuilder.path("/search")
+                                .queryParam("product" , text)
+                                .build()
                 )
                 .retrieve()
                 .bodyToMono(List.class);
         productDtoMono = productDtoMono.switchIfEmpty(Mono.error(new NoSuchEntityException(PRODUCT_NOT_FOUND)));
-        return productDtoMono;
+        ObjectMapper mapper1 = new ObjectMapper();
+        return mapper1.convertValue(productDtoMono.block(), new TypeReference<List<ProductDtoData>>() { });
     }
+
 
 
 }

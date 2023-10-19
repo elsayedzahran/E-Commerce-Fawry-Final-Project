@@ -23,7 +23,7 @@ public class StockHistoryController {
         return new ResponseEntity<>(service.getHistory(id) , HttpStatus.OK);
     }
 
-   @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")
     ResponseEntity<?> deleteHistory(@PathVariable long id){
         service.removeHistory(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
