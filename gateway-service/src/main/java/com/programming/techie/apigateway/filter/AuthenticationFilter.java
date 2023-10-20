@@ -23,7 +23,8 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         return (((exchange, chain) -> {
             if (validator.isSecured.test(exchange.getRequest())){
                 try {
-                    template.getForObject("http://user-service/users/login",Boolean.class);
+                    String result = template.getForObject("http://user-service/users/login",String.class);
+                    System.out.println(result);
                 }catch (Exception e){
                     throw new RuntimeException(e.getMessage());
                 }
