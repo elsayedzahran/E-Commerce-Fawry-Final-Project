@@ -34,8 +34,6 @@ Nuser-service/src/main/java/com/example/userapi/exception/ExceptionMessage.java
 „
 Tuser-service/src/main/java/com/example/userapi/exception/GlobalExceptionHandler.java,4\2\42c59b85c1b56434c9b49a65fd4e09cc206d7078
 }
-Muser-service/src/main/java/com/example/userapi/controller/UserController.java,4\b\4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460
-}
 Muser-service/src/main/java/com/example/userapi/repository/UserRepository.java,2\a\2ae837770c8b3c66c2f23794b5e7dbb88244cd74
 ‚
 Ruser-service/src/main/java/com/example/userapi/repository/AuthorityRepository.java,d\4\d4b5cc763eeab65d80a260d66e6beebafc369740
@@ -43,8 +41,6 @@ t
 Duser-service/src/main/java/com/example/userapi/entity/Authority.java,2\e\2e643d7c7a45cf0b7e9a9241030d46d90cd2e86d
 x
 Huser-service/src/main/java/com/example/userapi/service/UserServices.java,5\1\517bc06ce9e205258b9c384918cc4846e66c7142
-{
-Kuser-service/src/main/java/com/example/userapi/security/SecurityConfig.java,a\6\a6aa9a71b4bc02de67d566baf4abc590408a7278
 v
 Fuser-service/src/main/java/com/example/userapi/exception/ApiError.java,b\3\b322c4027632b08adbbd5c6617391b753e879a93
 }

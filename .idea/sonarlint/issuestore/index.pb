@@ -29,8 +29,6 @@ Vstore-service/src/main/java/com/fawry/store/services/serviceimp/ProductServiceI
 Xstore-service/src/main/java/com/fawry/store/services/serviceimp/WarehouseServiceImp.java,e\3\e386133d7195a7a8dcbf331d89fa9504c18637ae
 …
 Ubank-service/src/main/java/com/example/bankapplication/controller/BankController.java,2\3\2303d586b660374f6c97144111d38907fe396293
-}
-Muser-service/src/main/java/com/example/userapi/controller/UserController.java,4\b\4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460
 o
 ?user-service/src/main/java/com/example/userapi/dto/UserDto.java,6\1\61d4ba946635823f402b651639d6cf1f1f82a46b
 r
@@ -51,7 +49,5 @@ Tuser-service/src/main/java/com/example/userapi/exception/GlobalExceptionHandler
 Ruser-service/src/main/java/com/example/userapi/repository/AuthorityRepository.java,d\4\d4b5cc763eeab65d80a260d66e6beebafc369740
 }
 Muser-service/src/main/java/com/example/userapi/repository/UserRepository.java,2\a\2ae837770c8b3c66c2f23794b5e7dbb88244cd74
-{
-Kuser-service/src/main/java/com/example/userapi/security/SecurityConfig.java,a\6\a6aa9a71b4bc02de67d566baf4abc590408a7278
 x
 Huser-service/src/main/java/com/example/userapi/service/UserServices.java,5\1\517bc06ce9e205258b9c384918cc4846e66c7142

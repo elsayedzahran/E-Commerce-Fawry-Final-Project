@@ -17,6 +17,11 @@ public class UserController {
     @Autowired
     UserServices userServices;
 
+    @GetMapping("/login")
+    public boolean login(){
+        return true;
+    }
+
     @GetMapping
     public List<UserDto> findAll(){
         return userServices.findALl();

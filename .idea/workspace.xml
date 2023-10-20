@@ -4,92 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c5b5c0ca-ebd1-4298-a580-00bfbf070c60" name="Changes" comment="befor api-gateway module">
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/015b440e1a6e673305475f326ae65b35445a3c7a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/6/063abeb181649a9e7626cee5ae36169d16843f6f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/16fc70aabae83ebe2a238e0b15d5597e31742197" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/3/2303d586b660374f6c97144111d38907fe396293" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/28a8b9d173055b7eb36bd8821c23b079b3ee52e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2a0bde3ad40803460404c06783c3413dbb5f99c6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2ae837770c8b3c66c2f23794b5e7dbb88244cd74" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b951276eb778b3da5b98db572d01aefd5fccae6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e643d7c7a45cf0b7e9a9241030d46d90cd2e86d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/6/36c2c95c58e91d54e73235a3179525b971c739e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42c59b85c1b56434c9b49a65fd4e09cc206d7078" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/517bc06ce9e205258b9c384918cc4846e66c7142" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/519866e1cc6974fba778386aeba3da7c8ad5211d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53b034f076c71bedb12d03889e468a505de9a835" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/b/5b81fc0c39e7b7e3c72ab69d3ccc5d1f5cf43180" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/60f0e29961f4d9d6b25668f57b5744eec9f571b5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/61d4ba946635823f402b651639d6cf1f1f82a46b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64b5fac4735cc8681375aa4168a430ea1c2f296e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/67ce9d18c6ab9b7458be09cf3edfd4c6b4a1342e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/7/777b0cf90a03013c8b5aa4c1d7df75b1a4000159" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/94005114d776022a29a32f23440d5b1b3d0b83b9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6aa9a71b4bc02de67d566baf4abc590408a7278" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b322c4027632b08adbbd5c6617391b753e879a93" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4b5cc763eeab65d80a260d66e6beebafc369740" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e386133d7195a7a8dcbf331d89fa9504c18637ae" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee2854203c0ed7c70a82bda63f7334c8ce5ad085" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/7/f7068075561cc8f2f6312865e52b1db56097518a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/1/015b440e1a6e673305475f326ae65b35445a3c7a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/6/063abeb181649a9e7626cee5ae36169d16843f6f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/6/16fc70aabae83ebe2a238e0b15d5597e31742197" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/3/2303d586b660374f6c97144111d38907fe396293" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/8/28a8b9d173055b7eb36bd8821c23b079b3ee52e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2a0bde3ad40803460404c06783c3413dbb5f99c6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2ae837770c8b3c66c2f23794b5e7dbb88244cd74" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/b/2b951276eb778b3da5b98db572d01aefd5fccae6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2e643d7c7a45cf0b7e9a9241030d46d90cd2e86d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/6/36c2c95c58e91d54e73235a3179525b971c739e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/2/42c59b85c1b56434c9b49a65fd4e09cc206d7078" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/b/4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/517bc06ce9e205258b9c384918cc4846e66c7142" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/519866e1cc6974fba778386aeba3da7c8ad5211d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/53b034f076c71bedb12d03889e468a505de9a835" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/b/5b81fc0c39e7b7e3c72ab69d3ccc5d1f5cf43180" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/60f0e29961f4d9d6b25668f57b5744eec9f571b5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/1/61d4ba946635823f402b651639d6cf1f1f82a46b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/4/64b5fac4735cc8681375aa4168a430ea1c2f296e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/7/67ce9d18c6ab9b7458be09cf3edfd4c6b4a1342e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/7/777b0cf90a03013c8b5aa4c1d7df75b1a4000159" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/4/94005114d776022a29a32f23440d5b1b3d0b83b9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/6/a6aa9a71b4bc02de67d566baf4abc590408a7278" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/3/b322c4027632b08adbbd5c6617391b753e879a93" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4b5cc763eeab65d80a260d66e6beebafc369740" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/3/e386133d7195a7a8dcbf331d89fa9504c18637ae" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/e/ee2854203c0ed7c70a82bda63f7334c8ce5ad085" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/7/f7068075561cc8f2f6312865e52b1db56097518a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/programming/techie/apigateway/ApiGatewayApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="c5b5c0ca-ebd1-4298-a580-00bfbf070c60" name="Changes" comment="api-gateway module and discovery-server">
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/programming/techie/apigateway/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/programming/techie/apigateway/filter/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/com/programming/techie/apigateway/filter/RouteValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/6/a6aa9a71b4bc02de67d566baf4abc590408a7278" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/b/4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/6/a6aa9a71b4bc02de67d566baf4abc590408a7278" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/BankApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/example/bankapplication/BankApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/CouponApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/coupon-service/src/main/java/com/example/couponapi/CouponApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/NotificationApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/src/main/java/com/example/notificationapi/NotificationApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/OrderApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/java/com/example/orderapi/OrderApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/com/fawryfinalproject/productapi/ProductApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/com/fawryfinalproject/productapi/ProductApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/StoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-service/src/main/java/com/fawry/store/StoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userapi/UserApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userapi/UserApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/example/userapi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/example/userapi/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -133,7 +73,7 @@
       <recent name="E:\internship\Final Project\New folder\E-commerce\E-commerce\user-service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApiApplication">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="gateway-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.programming.techie.apigateway.ApiGatewayApplication" />
@@ -219,7 +159,7 @@
       <updated>1697715038387</updated>
       <workItem from="1697715039929" duration="2769000" />
       <workItem from="1697717880514" duration="1581000" />
-      <workItem from="1697735059819" duration="4007000" />
+      <workItem from="1697735059819" duration="11610000" />
     </task>
     <task id="LOCAL-00001" summary="first for me">
       <option name="closed" value="true" />
@@ -237,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697719075752</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="api-gateway module and discovery-server">
+      <option name="closed" value="true" />
+      <created>1697739127663</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697739127663</updated>
+    </task>
+    <task id="LOCAL-00004" summary="api-gateway module and discovery-server">
+      <option name="closed" value="true" />
+      <created>1697739136247</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697739136247</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +213,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first for me" />
     <MESSAGE value="befor api-gateway module" />
-    <option name="LAST_COMMIT_MESSAGE" value="befor api-gateway module" />
+    <MESSAGE value="api-gateway module and discovery-server" />
+    <option name="LAST_COMMIT_MESSAGE" value="api-gateway module and discovery-server" />
   </component>
 </project>
