@@ -8,6 +8,9 @@ import com.example.userapi.repository.AuthorityRepository;
 import com.example.userapi.repository.UserRepository;
 import org.mapstruct.control.MappingControl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +26,10 @@ public class UserServices {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
 
     public List<UserDto> findALl(){
         List<User> users = userRepository.findAll();
@@ -55,4 +62,12 @@ public class UserServices {
         return userMapper.toDTO(userRepository.save(user));
     }
 
+    public String login(User user) {
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
+        if (authentication.isAuthenticated()){
+            return authentication.getAuthorities().toString();
+        }else {
+            throw new CustomException(ExceptionMessage.Login_Faild);
+        }
+    }
 }

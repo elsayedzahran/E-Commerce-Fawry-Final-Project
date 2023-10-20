@@ -49,5 +49,3 @@ Tuser-service/src/main/java/com/example/userapi/exception/GlobalExceptionHandler
 Ruser-service/src/main/java/com/example/userapi/repository/AuthorityRepository.java,d\4\d4b5cc763eeab65d80a260d66e6beebafc369740
 }
 Muser-service/src/main/java/com/example/userapi/repository/UserRepository.java,2\a\2ae837770c8b3c66c2f23794b5e7dbb88244cd74
-x
-Huser-service/src/main/java/com/example/userapi/service/UserServices.java,5\1\517bc06ce9e205258b9c384918cc4846e66c7142

@@ -17,9 +17,9 @@ public class UserController {
     @Autowired
     UserServices userServices;
 
-    @GetMapping("/login")
-    public boolean login(){
-        return true;
+    @PostMapping("/login")
+    public String login(@RequestBody User user){
+        return userServices.login(user);
     }
 
     @GetMapping

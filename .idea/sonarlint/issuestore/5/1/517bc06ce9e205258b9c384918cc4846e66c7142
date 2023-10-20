@@ -1,7 +1,0 @@
-
-h
-java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(³Ê¡‡
-H
-java:S1611"2Remove the parentheses around the "user" parameter(³Ê¡‡
-\
-java:S1128	"ARemove this unused import 'org.mapstruct.control.MappingControl'.(¡½¦ëþÿÿÿÿ

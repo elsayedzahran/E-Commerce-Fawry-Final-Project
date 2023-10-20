@@ -39,8 +39,6 @@ Muser-service/src/main/java/com/example/userapi/repository/UserRepository.java,
 Ruser-service/src/main/java/com/example/userapi/repository/AuthorityRepository.java,d\4\d4b5cc763eeab65d80a260d66e6beebafc369740
 t
 Duser-service/src/main/java/com/example/userapi/entity/Authority.java,2\e\2e643d7c7a45cf0b7e9a9241030d46d90cd2e86d
-x
-Huser-service/src/main/java/com/example/userapi/service/UserServices.java,5\1\517bc06ce9e205258b9c384918cc4846e66c7142
 v
 Fuser-service/src/main/java/com/example/userapi/exception/ApiError.java,b\3\b322c4027632b08adbbd5c6617391b753e879a93
 }
