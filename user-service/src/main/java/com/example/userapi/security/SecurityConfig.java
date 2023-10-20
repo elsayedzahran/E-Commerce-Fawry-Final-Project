@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -17,6 +18,7 @@ import javax.sql.DataSource;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
     //this method to get users from Database and also get their roles
@@ -35,9 +37,8 @@ public class SecurityConfig {
 
         http.authorizeHttpRequests(configure->
                 configure
-                        .requestMatchers(HttpMethod.POST,"/users/login").permitAll()
-                        .requestMatchers(HttpMethod.GET,"/users").hasRole("ADMIN")
-
+                        .requestMatchers(HttpMethod.GET,"/**").permitAll()
+                        .requestMatchers(HttpMethod.POST,"/**").permitAll()
 
         );
         //to tell Spring that we use Basic Authentication

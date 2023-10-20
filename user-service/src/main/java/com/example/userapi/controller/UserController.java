@@ -17,10 +17,6 @@ public class UserController {
     @Autowired
     UserServices userServices;
 
-    @PostMapping("/login")
-    public String login(@RequestBody User user){
-        return userServices.login(user);
-    }
 
     @GetMapping
     public List<UserDto> findAll(){

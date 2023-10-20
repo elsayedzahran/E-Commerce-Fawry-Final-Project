@@ -62,12 +62,4 @@ public class UserServices {
         return userMapper.toDTO(userRepository.save(user));
     }
 
-    public String login(User user) {
-        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(),user.getPassword()));
-        if (authentication.isAuthenticated()){
-            return authentication.getAuthorities().toString();
-        }else {
-            throw new CustomException(ExceptionMessage.Login_Faild);
-        }
-    }
 }

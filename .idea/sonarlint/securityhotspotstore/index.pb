@@ -1,12 +1,8 @@
 
 z
 Jstore-service/src/main/java/com/fawry/store/services/WarehouseService.java,0\6\063abeb181649a9e7626cee5ae36169d16843f6f
-Ñ
-Tcoupon-service/src/main/java/com/example/couponapi/controllers/CouponController.java,0\1\015b440e1a6e673305475f326ae65b35445a3c7a
 y
 Iorder-service/src/main/java/com/example/orderapi/dtos/PostProductDto.java,1\6\16fc70aabae83ebe2a238e0b15d5597e31742197
-Ç
-Rstore-service/src/main/java/com/fawry/store/controller/StockHistoryController.java,6\4\64b5fac4735cc8681375aa4168a430ea1c2f296e
 }
 Mstore-service/src/main/java/com/fawry/store/externalapi/FetchProductData.java,2\b\2b951276eb778b3da5b98db572d01aefd5fccae6
 {
@@ -21,14 +17,8 @@ Oorder-service/src/main/java/com/example/orderapi/services/OrderServiceImpl.java
 Xstore-service/src/main/java/com/fawry/store/services/serviceimp/InventoryServiceImp.java,5\b\5b81fc0c39e7b7e3c72ab69d3ccc5d1f5cf43180
 à
 Xstore-service/src/main/java/com/fawry/store/services/serviceimp/WarehouseServiceImp.java,e\3\e386133d7195a7a8dcbf331d89fa9504c18637ae
-
-Ostore-service/src/main/java/com/fawry/store/controller/InventoryController.java,6\0\60f0e29961f4d9d6b25668f57b5744eec9f571b5
 t
 Dstore-service/src/main/java/com/fawry/store/dtos/PostProductDto.java,f\7\f7068075561cc8f2f6312865e52b1db56097518a
-
-Ostore-service/src/main/java/com/fawry/store/controller/WarehouseController.java,5\1\519866e1cc6974fba778386aeba3da7c8ad5211d
-Ö
-Ubank-service/src/main/java/com/example/bankapplication/controller/BankController.java,2\3\2303d586b660374f6c97144111d38907fe396293
 ~
 Nuser-service/src/main/java/com/example/userapi/exception/ExceptionMessage.java,6\7\67ce9d18c6ab9b7458be09cf3edfd4c6b4a1342e
 Ñ
@@ -61,8 +51,6 @@ D
 bank-service/pom.xml,7\5\75d7d1e0183335880611360fb79c353afd17b847
 F
 coupon-service/pom.xml,6\4\64002dbf1fad968c1d3ab6714ce6831cdddc638c
-ä
-Zgateway-service/src/main/java/com/programming/techie/apigateway/ApiGatewayApplication.java,4\c\4c34f55df15a6eb2270f6a5751c08cfdf9fcc590
 w
 G.idea/sonarlint/issuestore/2/a/2ae837770c8b3c66c2f23794b5e7dbb88244cd74,1\b\1bcc7b7907f56779739ca849370beddb12c01d3a
 {
@@ -99,8 +87,6 @@ w
 G.idea/sonarlint/issuestore/1/6/16fc70aabae83ebe2a238e0b15d5597e31742197,c\8\c80b11c91e36a242e195d4ccf68c29440a0b381d
 Å
 Q.idea/sonarlint/securityhotspotstore/1/6/16fc70aabae83ebe2a238e0b15d5597e31742197,c\b\cb39094e5e9a13275291ede9354777188fe9bf87
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 Å
 Q.idea/sonarlint/securityhotspotstore/2/3/2303d586b660374f6c97144111d38907fe396293,6\c\6ccfd1ac0451bd99b243291462eb8da38781a89c
 y
@@ -147,11 +133,3 @@ K
 discovery-server/.gitignore,6\3\63ee1c8d6d94372b4227afa850815ddbaa1ba9d3
 v
 Fuser-service/src/main/java/com/example/userapi/UserApiApplication.java,7\0\70765c1deec2affbcca6c5b2ba65befc69d42be9
-G
-gateway-service/pom.xml,6\2\627bed90df51db9ce1f2c987c3ddc0380c236bae
-D
-user-service/pom.xml,d\2\d2f5d1978e5f519100a679c4109f89296278badc
-}
-Muser-service/src/main/java/com/example/userapi/controller/UserController.java,4\b\4b3e1c5ceb8a04c46a0fbbff7ee3dd44dff5c460
-x
-Huser-service/src/main/java/com/example/userapi/service/UserServices.java,5\1\517bc06ce9e205258b9c384918cc4846e66c7142
